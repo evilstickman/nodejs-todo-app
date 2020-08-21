@@ -31,4 +31,17 @@ $(document).ready(function(){
       });
   });
 
+  $('#weather-button').on('click', function(){
+      var item = $(this).text().replace(/ /g, "-");
+      $.ajax({
+        type: 'GET',
+        url: '/weather',
+        success: function(data){
+          //do something with the data via front-end framework
+          alert(data);
+          location.reload();
+        }
+      });
+  });
+
 });
